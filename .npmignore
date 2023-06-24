@@ -1,0 +1,9 @@
+# ignorar el directorio de pruebas
+test/
+
+# ignorar el directorio de código TypeScript
+src/
+
+# ignorar archivos específicos de configuración de desarrollo
+.tsconfig.json
+.jest.config.js

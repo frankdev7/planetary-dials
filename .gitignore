@@ -1,0 +1,9 @@
+# Dependency directories
+node_modules
+
+# Distribution directory
+.vscode
+dist/
+
+# Unsupported lock files
+package-lock.json
