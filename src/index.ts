@@ -2,7 +2,8 @@ export {
     getPlanetaryDials,
     getCountryDialCode,
     getCountryFlag,
-    getCountryName
+    getCountryName,
+    getMultipleCountryDialInfo
 } from './planetary-dials'
 
 export { CountryDialInfo } from './types';

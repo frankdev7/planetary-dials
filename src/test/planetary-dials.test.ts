@@ -1,13 +1,15 @@
 import {
-    Country,
-    CountryDialInfo,
-    getCountryDialCode,
-    getCountryFlag,
-    getCountryName
+  Country,
+  CountryDialInfo,
+  getCountryDialCode,
+  getCountryFlag,
+  getCountryName,
+  getMultipleCountryDialInfo
 } from "../index";
 
 describe('PlanetaryDials', () => {
   let expectedCountry: CountryDialInfo;
+  let multipleCountryDialInfo: CountryDialInfo[];
 
   beforeAll(() => {
     expectedCountry = {
@@ -16,6 +18,21 @@ describe('PlanetaryDials', () => {
       "name": "Afghanistan",
       "dialCode": "+93"
     };
+
+    multipleCountryDialInfo = [
+      {
+        flag: "https://flagsapi.com/US/shiny/64.png",
+        code: "US",
+        name: "United States",
+        dialCode: "+1"
+      },
+      {
+        flag: "https://flagsapi.com/CA/shiny/64.png",
+        code: "CA",
+        name: "Canada",
+        dialCode: "+1"
+      }
+    ];
   });
 
   it('should get dial code for AF', () => {
@@ -34,5 +51,12 @@ describe('PlanetaryDials', () => {
     const result = getCountryName(Country.AF);
     console.log(result);
     expect(result).toBe(expectedCountry.name);
+  });
+
+  it('should return an array of country dial info', () => {
+    const countryCodes: Country[] = [Country.US, Country.CA];
+    const result = getMultipleCountryDialInfo(countryCodes);
+
+    expect(result).toEqual(multipleCountryDialInfo);
   });
 });

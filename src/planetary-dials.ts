@@ -25,3 +25,15 @@ export const getCountryFlag = function (countryCode: Country): string {
     const country = PlanetaryDials[countryCode];
     return country && country.flag;
 }
+
+export const getMultipleCountryDialInfo = (countryCodes: Country[]): CountryDialInfo[] => {
+    let countryDialInfos: CountryDialInfo[] = [];
+
+    countryCodes.forEach((countryCode) => {
+        const countryDialInfo = getCountryDialInfo(countryCode);
+        if (countryDialInfo) {
+            countryDialInfos.push(countryDialInfo);
+        }
+    });
+    return countryDialInfos;
+}

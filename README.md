@@ -23,10 +23,16 @@ import {
     getCountryName
 } from "planetary-dials";
 
+// one country
 console.log(getPlanetaryDials());
 console.log(getCountryDialCode(Country.AF));
 console.log(getCountryFlag(Country.AF));
 console.log(getCountryName(Country.AF));
+
+// multiple countries
+const countryCodes: Country[] = [Country.US, Country.CA];
+const result = getMultipleCountryDialInfo(countryCodes);
+console.log(result);
 ```
 
 ## Contributing
